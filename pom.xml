@@ -59,7 +59,7 @@
         <archive>
           <manifest>
             <addClasspath>true</addClasspath>
-            <mainClass>edu.estatuas.GalleyGrub</mainClass>
+            <mainClass>edu.estatuas.galleygrub.GalleyGrub</mainClass>
           </manifest>
           <manifestEntries>
             <url>${project.url}</url>
