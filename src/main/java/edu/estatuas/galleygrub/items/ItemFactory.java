@@ -11,19 +11,26 @@ public class ItemFactory {
 
     public Item getItem(String name, double price){
         Item item = new Item(name, price);
+        itemMap.putIfAbsent(name, item);
 
         return item;
     }
 
     public Item getItem(String name, double price, String extra){
         Item item = new Item(name, price, extra);
+        itemMap.putIfAbsent(name + "w/" + extra, item);
+
         return item;
     }
-
+    
     public int size(){
 
         return itemMap.size();
         
+    }
+
+    public void clear(){
+        itemMap.clear();
     }
     
 }
