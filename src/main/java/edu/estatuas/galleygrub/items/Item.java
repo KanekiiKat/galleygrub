@@ -51,7 +51,8 @@ public class Item implements Product {
 
     @Override
     public String toString(){
-        return name() + "...." + price();
+        return name() + "...." + price() + "$";
+  
     }
 
 
