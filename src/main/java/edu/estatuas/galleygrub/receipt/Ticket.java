@@ -1,4 +1,5 @@
 package edu.estatuas.galleygrub.receipt;
+import edu.estatuas.galleygrub.extras.Extra;
 import edu.estatuas.galleygrub.order.Comanda;
 
 public interface Ticket {
