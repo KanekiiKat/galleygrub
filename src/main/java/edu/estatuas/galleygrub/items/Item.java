@@ -51,8 +51,11 @@ public class Item implements Product {
 
     @Override
     public String toString(){
-        return name() + "...." + price() + "$";
-  
+        if (extra() == null){
+            return name() + "...." + price() + "$";
+        } else {
+            return name() + " w/ " + extra() + "...." + price() + "$";
+        }
     }
 
 
