@@ -50,7 +50,7 @@ public class ItemFactoryTest {
         assertTrue(item.equals(itemClon));
     } 
 
-    /* 
+    
     @Test
     public void get_extra_item_test() {
 
@@ -70,12 +70,14 @@ public class ItemFactoryTest {
         Item item = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
         assertNotNull(item);
         assertEquals(1, ItemFactory.size());
-
+    
         Item itemClon = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
         assertEquals(1, ItemFactory.size());
-        assertTrue(item == itemClon);
+        assertTrue(item.equals(itemClon));
     }
 
+    
+    
     @Test
     public void get_regular_extra_item_test() {
 
@@ -87,5 +89,5 @@ public class ItemFactoryTest {
         assertEquals(2, ItemFactory.size());
         assertNotSame(kpattywc,kpatty);
     }
-        */
+
 } 
