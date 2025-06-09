@@ -19,7 +19,7 @@ public abstract class Extra {
         this.extraProduct = extraProduct;
     }
 
-    public abstract void sumExtra(Comanda comanda);  
+    public abstract void sumExtras(Comanda comanda);  
 
 
 }
