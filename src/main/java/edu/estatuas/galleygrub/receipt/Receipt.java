@@ -28,16 +28,19 @@ public class Receipt implements Ticket {
         return this.firstExtra;
     }
     
-
     @Override
-    public void sumExtraCharge() {
-
+    public void sumExtrasCharge() {
+        if (this.firstExtra != null) {
+            this.firstExtra.sumExtras(this.order);
+        }
     }
 
     @Override
     public Double total() {
         return this.total;
     }
+
+
 
     @Override
     public void print() {

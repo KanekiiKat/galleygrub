@@ -6,13 +6,17 @@ import edu.estatuas.galleygrub.order.Comanda;
 
 public abstract class Extra {
 
-    final static String CHEESE = "";
-    final static String SAUCE = "";
-    final static String SIZE_LARGE = "";
+    final static String CHEESE = "cheese";
+    final static String SAUCE = "sauce";
+    final static String SIZE_LARGE = "large";
     String extraProduct = "";
     Optional<Extra> nextExtra;
 
     public Extra() {
+    }
+
+    public void setNextExtra(Optional<Extra> nextExtra){
+        this.nextExtra = nextExtra;
     }
 
     public void setExtraProduct(Extra extra) {
