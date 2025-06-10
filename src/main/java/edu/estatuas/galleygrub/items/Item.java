@@ -36,9 +36,9 @@ public class Item implements Product {
     public Boolean isRegular(){
 
         if (extra == null){
-            return false;
+            return true;
         }
-        return true;
+        return false;
 
     }
 

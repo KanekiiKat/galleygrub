@@ -10,6 +10,7 @@ public class Receipt implements Ticket {
     private Extra firstExtra;
 
     public Receipt(Comanda comanda) {
+        this.order = comanda;
     }
 
     @Override
@@ -40,6 +41,8 @@ public class Receipt implements Ticket {
 
     @Override
     public void print() {
+        order.display();
+        System.out.print("\tTOTAL --------> " + total().toString() + "$\n");
     }
 
     
