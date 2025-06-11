@@ -1,5 +1,10 @@
 package edu.estatuas.galleygrub;
 
+import edu.estatuas.galleygrub.extras.CheeseExtra;
+import edu.estatuas.galleygrub.extras.Extra;
+import edu.estatuas.galleygrub.extras.Regular;
+import edu.estatuas.galleygrub.extras.SauceExtra;
+import edu.estatuas.galleygrub.extras.SizeLargeExtra;
 import edu.estatuas.galleygrub.items.Item;
 import edu.estatuas.galleygrub.items.Product;
 import edu.estatuas.galleygrub.items.RetailPrice;
@@ -177,6 +182,47 @@ public class GalleyGrub {
         // Utiliza el diccionario Prices para incluir
         // el precio de los extras en la salida por consola.
         order.display();
-        
-    }  
-}
+
+        /**
+         * Define el importe a cargar por cada extra.
+         * 
+         * Configura los tipos de Extras:
+         *  - extra Cheese +0.25
+         *  - extra sauce +0.50
+         *  - size medium +0.25
+         *  - size large +0.50
+         * 
+         * Sigue los casos test del paquete Extras
+         * para implementar 4 clases que se encargan
+         * de sumar el precio base de los Items
+         * y de los extras para calcular el precio
+         * total de Order (la comanda).
+         * 
+         * El precio total de la comanda se guarda en Order.
+         */
+
+        Extra regular = new Regular(); // suma el precio base
+        Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
+        Extra sauce = new SauceExtra(); // suma el precio de sauce
+        Extra size = new SizeLargeExtra(); // suma el precio del tamanho Large
+
+        regular.setNextExtra(cheese);
+        cheese.setNextExtra(sauce);
+        sauce.setNextExtra(size);
+
+        /**
+         * Squidward Tentacles genera el recibo,
+         * la app calcula el importe total de la comanda
+         * y lo muestra en pantalla.
+         */
+
+        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+
+        Ticket receiptExtra = new Receipt(order);
+        receiptExtra.setChain(regular);
+
+        receiptExtra.total();
+        receiptExtra.print();
+    }
+
+}  

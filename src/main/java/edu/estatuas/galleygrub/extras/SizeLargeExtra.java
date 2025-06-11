@@ -18,6 +18,8 @@ public class SizeLargeExtra extends Extra {
                 
             }
         }
+        
+        this.nextExtra.ifPresent(chain -> chain.sumExtras(order));
     }
 
 }

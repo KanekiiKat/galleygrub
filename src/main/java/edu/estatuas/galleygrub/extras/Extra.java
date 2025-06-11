@@ -10,20 +10,16 @@ public abstract class Extra {
     final static String SAUCE = "sauce";
     final static String SIZE_LARGE = "large";
     String extraProduct = "";
-    Optional<Extra> nextExtra;
+    Optional<Extra> nextExtra = Optional.ofNullable(null);
 
     public Extra() {
     }
 
-    public void setNextExtra(Optional<Extra> nextExtra){
-        this.nextExtra = nextExtra;
+    public void setNextExtra(Extra nextExtra){
+        this.nextExtra = Optional.of(nextExtra);
     }
 
-    public void setExtraProduct(Extra extra) {
-        this.extraProduct = extraProduct;
-    }
 
     public abstract void sumExtras(Comanda comanda);
-    
     
 }
