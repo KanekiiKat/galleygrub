@@ -10,11 +10,14 @@ public class SizeLargeExtra extends Extra {
     public SizeLargeExtra() {
     }
     
+    @Override
     public void sumExtras(Comanda order){
         for (Item item : order.itemList()){
-            if (!item.isRegular() && item.name().equals("large")){
+            if (!item.isRegular() && item.extra().equals("large")){
                 order.updateTotal(SIZE_PRICE);
+                
             }
         }
     }
+
 }

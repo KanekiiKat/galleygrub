@@ -13,10 +13,15 @@ public class SauceExtra extends Extra {
     @Override
     public void sumExtras(Comanda order){
         for (Item item : order.itemList()){
-            if (!item.isRegular() && item.name().equals("sauce")){
+            if (!item.isRegular() && item.extra().equals("sauce")){
                 order.updateTotal(SAUCE_PRICE);
+
             }
         }
         
     }
+
+
+    
+    
 }

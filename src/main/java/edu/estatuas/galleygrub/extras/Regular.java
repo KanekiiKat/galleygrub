@@ -18,4 +18,5 @@ public class Regular extends Extra{
         }
         comanda.updateTotal(costRegularItem);
     }
+    
 }

@@ -35,8 +35,6 @@ public class GalleyGrub {
 
     public static void main( String[] args ) {
 
-        RetailPrice RetailPrice = new RetailPrice();
-
         /**
          * Crea un diccionario con los precios
          * de los extras.

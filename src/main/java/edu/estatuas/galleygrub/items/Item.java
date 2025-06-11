@@ -1,6 +1,7 @@
 package edu.estatuas.galleygrub.items;
 
 public class Item implements Product {
+
     
     private String name;
     private Double price;
@@ -54,7 +55,7 @@ public class Item implements Product {
         if (isRegular()){
             return name() + "...." + price() + "$";
         } else {
-            return name() + " w/ " + extra() + "...." + price() + "$";
+            return name() + " w/ " + extra() + "...." + price() + "$ + " + RetailPrice.getPrice(this.extra()) + "$";
         }
     }
 

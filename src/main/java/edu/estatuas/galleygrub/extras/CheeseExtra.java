@@ -1,4 +1,5 @@
 package edu.estatuas.galleygrub.extras;
+import edu.estatuas.galleygrub.items.Item;
 import edu.estatuas.galleygrub.order.Comanda;
 
 public class CheeseExtra extends Extra {
@@ -11,11 +12,14 @@ public class CheeseExtra extends Extra {
 
     @Override
     public void sumExtras(Comanda order){
-        
-        if (nextExtra.isEmpty()){
-            
+        for (Item item : order.itemList()){
+            if (!item.isRegular() && item.extra().equals("cheese")){
+                order.updateTotal(CHEESE_PRICE);
+            }
         }
         
     }
+
+    
 
 }

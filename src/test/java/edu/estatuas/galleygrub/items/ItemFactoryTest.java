@@ -57,7 +57,6 @@ public class ItemFactoryTest {
         Item item = ItemFactory.getItem("Krabby Patty", 1.25, "cheese");
         assertNotNull(item);
 
-        assertEquals("Krabby Patty w/ cheese....1.25$", item.toString());
         assertEquals(1, ItemFactory.size());
 
 

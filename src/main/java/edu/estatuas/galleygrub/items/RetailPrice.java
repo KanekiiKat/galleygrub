@@ -5,25 +5,35 @@ import java.util.Map;
 
 public class RetailPrice {
 
-    private HashMap<String, Double> prices = new HashMap<>();
+    static final HashMap<String, Double> prices = new HashMap<>();
 
-    public RetailPrice(){}
+    private RetailPrice(){}
 
 
-    public void init_prices(){
+    public static void init_prices(){
 
-        prices.putIfAbsent("cheese", 0.25d);
-        prices.putIfAbsent("sauce", 0.50d);
-        prices.putIfAbsent("medium", 0.50d);
-        prices.putIfAbsent("large", 0.50d);
+        prices.put("cheese", 0.25d);
+        prices.put("sauce", 0.50d);
+        prices.put("medium", 0.25d);
+        prices.put("large", 0.50d);
 
     }
     
-    public void display(){
+    
+    public static void display(){
         for (Map.Entry<String, Double> food : prices.entrySet()){
             System.out.println("\t" + food.getKey() + "=" + food.getValue());
         }
     }
+
+     static double getPrice(String item) {
+        if (prices.get(item) == null){
+            return 0.0;
+        } else {
+            return prices.get(item);
+        }
+        
+    }  
 
 
 }
